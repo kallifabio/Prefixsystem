@@ -1,0 +1,8 @@
+name: Rangsystem
+version: 2.4
+main: de.kallifabio.prefixsystem.Prefixsystem
+author: kallifabio
+
+commands:
+  rangsystem:
+    description: Information das Plugin

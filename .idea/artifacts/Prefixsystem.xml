@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Prefixsystem">
+    <output-path>$PROJECT_DIR$/../../Plugin Output/Prefixsystem</output-path>
+    <root id="archive" name="Prefixsystem.jar">
+      <element id="module-output" name="Prefixsystem" />
+    </root>
+  </artifact>
+</component>
