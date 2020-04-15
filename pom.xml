@@ -33,6 +33,11 @@
             <artifactId>shortspigot</artifactId>
             <version>1.12.2-build-64</version>
         </dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.11</version>
+        </dependency>
     </dependencies>
 
 </project>

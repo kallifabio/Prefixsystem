@@ -20,10 +20,10 @@ public class PlayerJoinListener implements Listener {
             new UpdateChecker(49736).getLatestVersion(version -> {
                 if (!Prefixsystem.getInstance().getDescription().getVersion().equalsIgnoreCase(version)) {
                     player.sendMessage(ChatColor.GRAY + "****************************************************************");
-                    player.sendMessage(ChatColor.RED + "PluginName is outdated!");
-                    player.sendMessage(ChatColor.RED + "Newest version: " + version);
-                    player.sendMessage(ChatColor.RED + "Your version: " + ChatColor.BOLD + Settings.VERSION);
-                    player.sendMessage(ChatColor.GOLD + "Please Update Here: " + ChatColor.ITALIC + Settings.PLUGIN_URL);
+                    player.sendMessage(ChatColor.RED + "Pluginversion ist nicht aktuell!");
+                    player.sendMessage(ChatColor.RED + "Neuste Version: " + version);
+                    player.sendMessage(ChatColor.RED + "Deine Version: " + ChatColor.BOLD + Settings.VERSION);
+                    player.sendMessage(ChatColor.GOLD + "Update herunterladen: " + ChatColor.ITALIC + Settings.PLUGIN_URL);
                     player.sendMessage(ChatColor.GRAY + "****************************************************************");
                 }
             });
@@ -41,28 +41,30 @@ public class PlayerJoinListener implements Listener {
         scoreboard.registerNewTeam("005Supp");
         scoreboard.registerNewTeam("006Builder");
         scoreboard.registerNewTeam("007Sponsor");
-        scoreboard.registerNewTeam("008YT");
-        scoreboard.registerNewTeam("009JrYT");
-        scoreboard.registerNewTeam("010Apfel");
-        scoreboard.registerNewTeam("011Eisen");
-        scoreboard.registerNewTeam("012Gold");
-        scoreboard.registerNewTeam("013Premi");
-        scoreboard.registerNewTeam("014Spieler");
+        scoreboard.registerNewTeam("008Freund");
+        scoreboard.registerNewTeam("009YT");
+        scoreboard.registerNewTeam("010JrYT");
+        scoreboard.registerNewTeam("011Apfel");
+        scoreboard.registerNewTeam("012Eisen");
+        scoreboard.registerNewTeam("013Gold");
+        scoreboard.registerNewTeam("014Premi");
+        scoreboard.registerNewTeam("015Spieler");
 
         scoreboard.getTeam("001Owner").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Owner"));
-        scoreboard.getTeam("002Admin").setPrefix("§cAdmin §7| §c");
-        scoreboard.getTeam("003Dev").setPrefix("§3Dev §7| §3");
-        scoreboard.getTeam("004Mod").setPrefix("§fMod §7| §f");
-        scoreboard.getTeam("005Supp").setPrefix("§1Supp §7| §1");
-        scoreboard.getTeam("006Builder").setPrefix("§2Builder §7| §2");
-        scoreboard.getTeam("007Sponsor").setPrefix("§9Sponsor §7| §9");
-        scoreboard.getTeam("008YT").setPrefix("§5YT §7| §5");
-        scoreboard.getTeam("009JrYT").setPrefix("§dJrYT §7| §d");
-        scoreboard.getTeam("010Apfel").setPrefix("§aApfel §7| §a");
-        scoreboard.getTeam("011Eisen").setPrefix("§7Eisen §7| §7");
-        scoreboard.getTeam("012Gold").setPrefix("§eGold §7| §e");
-        scoreboard.getTeam("013Premi").setPrefix("§6Premium §7| §6");
-        scoreboard.getTeam("014Spieler").setPrefix("§8");
+        scoreboard.getTeam("002Admin").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Admin"));
+        scoreboard.getTeam("003Dev").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Developer"));
+        scoreboard.getTeam("004Mod").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Moderator"));
+        scoreboard.getTeam("005Supp").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Supporter"));
+        scoreboard.getTeam("006Builder").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Builder"));
+        scoreboard.getTeam("007Sponsor").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Sponsor"));
+        scoreboard.getTeam("008Freund").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Freund"));
+        scoreboard.getTeam("009YT").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.YouTuber"));
+        scoreboard.getTeam("010JrYT").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.JrYouTuber"));
+        scoreboard.getTeam("011Apfel").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Apfel"));
+        scoreboard.getTeam("012Eisen").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Eisen"));
+        scoreboard.getTeam("013Gold").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Gold"));
+        scoreboard.getTeam("014Premi").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Premium"));
+        scoreboard.getTeam("015Spieler").setPrefix(Prefixsystem.getInstance().getConfigManager().getBuilder().getString("Prefix.Spieler"));
 
         String team = "";
         if (player.hasPermission("rang.owner")) {
@@ -79,20 +81,22 @@ public class PlayerJoinListener implements Listener {
             team = "006Builder";
         } else if (player.hasPermission("rang.sponsor")) {
             team = "007Sponsor";
+        } else if (player.hasPermission("rang.freund")) {
+            team = "008Freund";
         } else if (player.hasPermission("rang.yt")) {
-            team = "008YT";
+            team = "009YT";
         } else if (player.hasPermission("rang.jryt")) {
-            team = "009JrYT";
+            team = "010JrYT";
         } else if (player.hasPermission("rang.apfel")) {
-            team = "010Apfel";
+            team = "011Apfel";
         } else if (player.hasPermission("rang.eisen")) {
-            team = "011Eisen";
+            team = "012Eisen";
         } else if (player.hasPermission("rang.gold")) {
-            team = "012Gold";
+            team = "013Gold";
         } else if (player.hasPermission("rang.premi")) {
-            team = "013Premi";
+            team = "014Premi";
         } else {
-            team = "014Spieler";
+            team = "015Spieler";
         }
 
         scoreboard.getTeam(team).addPlayer(player);
