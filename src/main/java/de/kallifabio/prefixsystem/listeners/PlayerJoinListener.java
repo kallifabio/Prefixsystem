@@ -16,7 +16,7 @@ public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         final Player player = event.getPlayer();
-        if (Prefixsystem.getInstance().getConfigManager().getBuilder().getBoolean("Update.Enabled") == true) {
+        if (Prefixsystem.getInstance().getConfigManager().getBuilder().getBoolean("Update.Enabled")) {
             new UpdateChecker(49736).getLatestVersion(version -> {
                 if (!Prefixsystem.getInstance().getDescription().getVersion().equalsIgnoreCase(version)) {
                     player.sendMessage(ChatColor.GRAY + "****************************************************************");

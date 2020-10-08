@@ -1,0 +1,42 @@
+name: RangSystem
+author: kallifabio
+version: 2.3
+main: de.kallifabio.rang.RangSystem
+
+commands:
+  rangsystem:
+    description:
+  help rangsystem:
+    description:
+  ränge:
+    description:
+
+permissions:
+  rang.owner:
+    default: false
+  rang.admin:
+    default: false
+  rang.dev:
+    default: false
+  rang.mod:
+    default: false
+  rang.supp:
+    default: false
+  rang.builder:
+    default: false
+  rang.sponsor:
+    default: false
+  rang.yt:
+    default: false
+  rang.jryt:
+    default: false
+  rang.apfel:
+    default: false
+  rang.eisen:
+    default: false
+  rang.gold:
+    default: false
+  rang.premi:
+    default: false
+  rang.spieler:
+    default: true

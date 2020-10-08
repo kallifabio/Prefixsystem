@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Rang">
+    <output-path>$PROJECT_DIR$/out/artifacts/Rang</output-path>
+    <root id="archive" name="Rang.jar">
+      <element id="module-output" name="RangSystem" />
+    </root>
+  </artifact>
+</component>
